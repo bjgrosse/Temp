@@ -4,9 +4,9 @@
  let element;
  function receiveMessage (evt) {
       if (evt.data === 'MM:3PCunsupported') {
-        alert("Third party cookies are blocked")
+        alert("Third party cookies are blocked!")
       } else if (evt.data === 'MM:3PCsupported') {
-        alert("Third party cookies are supported")
+        alert("Third party cookies are supported!")
       }
 
       document.body.removeChild(element)
@@ -18,8 +18,8 @@
  }
 function test() {
   element = document.createElement('iframe');
-  //element.src="https://mindmup.github.io/3rdpartycookiecheck/start.html?" + (new Date()).getTime();
-  element.src="https://mindmup.github.io/3rdpartycookiecheck/start.html"
+  element.src="https://mindmup.github.io/3rdpartycookiecheck/start.html?" + (new Date()).getTime();
+  //element.src="https://mindmup.github.io/3rdpartycookiecheck/start.html"
   document.body.append(element)
 }
 </script>
