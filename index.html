@@ -1,0 +1,23 @@
+<html>
+<script>
+
+function test() {
+
+ var receiveMessage = function (evt) {
+   if (evt.data === 'MM:3PCunsupported') {
+     alert("Third party cookies are blocked")
+   } else if (evt.data === 'MM:3PCsupported') {
+     alert("Third party cookies are supported")
+   }
+   
+   document.body.removeChild(element)
+ };
+window.addEventListener("message", receiveMessage, false);
+const element = document.createElement('iframe');
+element.src="https://mindmup.github.io/3rdpartycookiecheck/start.html?" + (new Date()).getTime();
+document.body.append(element)
+}
+</script>
+
+<button click="javascript:test()">Test</button>
+</html>
