@@ -2,8 +2,7 @@
 <script>
  
  let element;
- function initialize() {
-      var receiveMessage = function (evt) {
+ function receiveMessage (evt) {
       if (evt.data === 'MM:3PCunsupported') {
         alert("Third party cookies are blocked")
       } else if (evt.data === 'MM:3PCsupported') {
@@ -13,7 +12,9 @@
       document.body.removeChild(element)
     };
 
-   window.addEventListener("message", receiveMessage, false);
+ 
+ function initialize() {
+      window.addEventListener("message", receiveMessage, false);
  }
 function test() {
   element = document.createElement('iframe');
